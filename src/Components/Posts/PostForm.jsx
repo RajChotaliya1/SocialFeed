@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaImage, FaPaperPlane, FaRegFileAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import UnderLineImg from "/src/assets/Underline.png";
 import { motion } from "framer-motion";
 
 const PostForm = ({ addPost }) => {
@@ -65,7 +66,7 @@ const PostForm = ({ addPost }) => {
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           <img
-            src="/src/assets/Underline.png"
+            src={UnderLineImg}
             alt="Underline"
             className="mx-auto w-40 h-auto object-contain"
           />
