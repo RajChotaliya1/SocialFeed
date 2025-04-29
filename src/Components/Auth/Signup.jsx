@@ -14,7 +14,7 @@ import { auth } from "../../constant/Firebase";
 import { paths } from "../../constant/Paths";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 
 const schema = yup.object({
   name: yup.string().min(3).max(10).required("Name is required"),
@@ -59,6 +59,9 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error(error.code, error.message);
+        toast.error(`Signup failed: ${error.message}`, {
+          autoClose: 3000,
+        });
       });
   };
 
@@ -165,7 +168,6 @@ const Signup = () => {
           <button
             type="submit"
             className="w-full text-base sm:text-lg mb-3 sm:mb-4 font-medium bg-gradient-to-r from-[#ff6f61] to-[#fe9a8b] text-white shadow-md hover:opacity-90 transition duration-300 p-2 sm:p-2.5 rounded-lg cursor-pointer"
-           
           >
             Create an Account
           </button>
