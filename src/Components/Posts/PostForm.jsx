@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaImage, FaPaperPlane, FaRegFileAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
-import UnderLineImg from "/src/assets/Underline.png";
+import UnderLineImg from "/src/assets/underline.png";
 import { motion } from "framer-motion";
 
 const PostForm = ({ addPost }) => {
