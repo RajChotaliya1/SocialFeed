@@ -59,9 +59,19 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error(error.code, error.message);
-        toast.error(`Signup failed: ${error.message}`, {
-          autoClose: 3000,
-        });
+
+        if (error.code === "auth/email-already-in-use") {
+          toast.error(
+            "This email is already registered. Please log in instead.",
+            {
+              autoClose: 2000,
+            }
+          );
+        } else {
+          toast.error(`Signup failed: ${error.message}`, {
+            autoClose: 2000,
+          });
+        }
       });
   };
 
